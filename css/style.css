@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+:root {
+    /* farben */
+    --wzub: #F9F6F3;
+    --wzuw: #F9F6F3;
+    --rzuhb: #F5C3CA;
+    --rzur: #F5C3CA;
+    --bzuw: #F5C3CA;
+    --bzur: #071636;
+    --bzub: #071636;
+    
+    /* abstände */
+    --ga-xxlarge: 8rem;
+    --ga-xlarge: 4rem;
+    --ga-large: 3rem;
+    --ga-medium: 2rem;
+    --ga-small: 1.5rem;
+    --ga-xsmall: 0.5rem;
+
+    /* schriften */
+    --f-title: "Playfair Display";
+    --f-text: "Inter" 
+}
+
+/* bruchts das??? */
+html {
+    scroll-behavior: smooth;
+}
+
+html * {
+    box-sizing: border-box;
+}
+
+/* body */
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--wzub);
+    font-family: serif;
+    color: var(--bzuw);
+
+    /* NÖTIG??? */
+    min-height: 100vh;
+
+    margin: 0;
+}
+
+/* schriften */
+
+h1 {
+    font-family: "Playfair Display";
+    font-weight: 800;
+}
+
+h2 {
+    font-family: "Playfair Display";
+    font-weight: 800;
+    margin-bottom: 0rem;
+    font-size: 60px;
+}
+
+p {
+    font-family: "Inter";
+    font-weight: 300;
+    font-size: 20px;
+
+}
+
+
+/* classes */
+
+.layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+
+    /* footer immer am unteren Bildschirmrand, egal wie wenig seiteninhalt */
+    flex: 1;
+}
+
+.topnav {
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    font-family: var(--f-text);
+    height: var(--ga-large);
+    border-radius: var(--ga-small);
+
+    margin: var(--ga-small) 0;
+
+    padding: 0 40px;
+
+    .bg_img {
+        position: absolute;
+        left: 0;
+
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top;
+
+        z-index: -1;
+    }
+
+    ul {
+        display: flex;
+        list-style: none;
+        gap: var(--ga-large);
+        color: var(--wzuw);
+
+        a {
+            text-decoration: none;
+            color: var(--primary);
+            
+            &:hover {
+                color: var(--rzur);
+            }
+
+            /* bruchi das??? */
+            &.active {
+                font-weight: bold;
+            }
+            &.active:hover {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .mode-button {
+        height: 50px;
+        width: 50px;
+        /* damit sich de mode-button nie verchlinered */
+        min-height: 50px;
+        min-width: 50px;
+        background-image: url(../img/grafiken/darkmode_button.png);
+        /* bild ganz sichtbar */
+        background-size: contain; 
+        /* bild nur 1x */
+        background-repeat: no-repeat;
+        background-position: center;
+        /* "klickbar" machen (bzw sieht so aus) */
+        cursor: pointer;
+    }
+}
+
+
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    flex-wrap: nowrap;
+    height: 250px;
+
+    border-radius: var(--ga-small);
+
+    margin-bottom: var(--ga-xlarge);
+
+    .bg_img {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+
+        /* nur breite wird so abgschnitte */
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        z-index: -1;
+    }
+}
+
+
+
+.title_img img {
+    /* bruchts, damit de z-index funktioniert */
+    position: relative;
+    width: auto;
+    height: 5rem;
+    object-fit: contain;
+    margin-bottom: 0.8rem;
+}
+
+.babyfoot {
+    position: relative;
+    margin: 0;
+    color: var(--wzuw);
+    white-space: nowrap;
+    margin-bottom: 1.5rem;
+    font-size: 75px;
+}
+
+.quoi {
+    display: grid;
+    grid-template-columns: 3fr 4fr;
+    gap: var(--ga-medium);
+    width: 100%;
+    height:auto;
+    align-items: center;
+    margin-bottom: var(--ga-xxlarge);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: var(--ga-small);
+    }
+
+    .textbox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        text-align: justify;
+        /* zeilumbruch erlaubt */
+        white-space: normal;
+
+
+        color: var(--bzub);
+        p {
+            font-family: var(--f-text);
+            line-height: 1.4;
+        }
+    }
+}
+
+.umbruch {
+    /* dasses bis ganz an rand vom viewport gaht */
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-bottom: var(--ga-xxlarge);
+}
+
+.bluebox {
+    background-color: var(--bzur);
+    width: 100vw;
+    /* dasses ganz an rand vom viewport gaht */
+    position: relative;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+
+    padding: var(--ga-medium) 0;
+
+    margin-bottom: var(--ga-xlarge);
+        
+    .toujours {
+        /* bi handy no mache dasses underenand gaht??? */
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: var(--ga-medium);
+        width: 100%;
+        height: auto;
+        align-items: center;  
+
+        h2 {
+            text-align: center;
+        }
+
+
+        img {
+            width: 100%;
+            aspect-ratio: 3 / 4;
+            object-fit: cover;
+            display: block;
+        }
+
+        .textbox {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            text-align: justify;
+            /* zeilumbruch erlaubt */
+            padding: 0 10px ;
+
+            color: var(--wzub);
+                
+            h2 {
+                margin: 0;
+            }
+
+            p {
+                font-family: var(--f-text);
+                line-height: 1.4;
+            }
+        }
+    }       
+}
+
+.concentration {
+    display: grid;
+    grid-template-columns: 4fr 3fr;
+    gap: var(--ga-medium);
+    width: 100%;
+    height:auto;
+    align-items: center;
+    margin-bottom: var(--ga-xxlarge);
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+        border-radius: var(--ga-small);
+
+    }
+
+    .textbox {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: center;
+        text-align: justify;
+        text-align-last: right;
+        /* zeilumbruch erlaubt */
+        white-space: normal;
+
+        color: var(--bzub);
+
+        p {
+            font-family: var(--f-text);
+            line-height: 1.4;
+        }
+    }
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+    width: 100vw;
+    padding: var(--ga-large) 0;
+    margin: 0;
+
+    background-color: var(--bzur);
+    color: var(--wzub);
+
+    .impressum {
+        margin-bottom: var(--ga-xxsmall);
+        cursor: pointer;
+        &:hover {
+            color: var(--rzur);
+        }
+    }
+}
+
+/* MOBILE (responsive!!!) */
+
+
+@media (max-width: 1000px) {
+    .layout {
+        max-width: 700px;
+    }
+    .topnav {
+        margin: var(--ga-xsmall) 0;
+    }
+    h2 {
+        font-size: 50px;
+    }
+    p {
+        font-size: 18px;
+    }
+    .title {
+        margin-bottom: var(--ga-large);
+    }
+    .babyfoot{
+        font-size: 60px;
+    }
+    .title_img img{
+        height: 4rem;
+    }
+    .quoi {
+        margin-bottom: var(--ga-large);
+    }
+    .bluebox{
+        padding: var(--ga-large) 0 ;
+    }
+    .bluebox .toujours img {
+        aspect-ratio: 1 / 2;
+    }
+    .umbruch {
+        margin-bottom: var(--ga-large);
+    }
+   
+}
+
+@media (max-width: 768px) {
+    .layout {
+        max-width: 500px;
+        padding: 0 var(--ga-xsmall)
+    }
+    .topnav {
+
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 var(--ga-small);
+        
+    }
+    h2 {
+        font-size: 40px;
+    }
+    p {
+        font-size: 16px;
+    }
+    .title {
+        margin-bottom: var(--ga-xsmall);
+    }
+    .title_img img{
+        height: 2rem;
+    }
+    .babyfoot{
+        font-size: 40px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    .quoi {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        margin-bottom: var(--ga-large);
+
+        h2 {
+            text-align: center;
+        }
+
+        .textbox {
+            order: 1;
+            align-items: center;
+            text-align: justify;
+            /* damit de text i de mobile version sich ned über de gaaanz bildschrim zieht */
+            padding: 0 var(--ga-xlarge);
+        }
+
+        .textbox br {
+            /* zum kein umbruch ha i de mobil version */
+            display: none;
+        }
+
+        img {
+            /* damits bild nachem text chunnt */
+            order: 2;
+            aspect-ratio: auto;
+            height: auto;
+        }
+    }
+
+    .bluebox{
+        padding: var(--ga-large) var(--ga-small) var(--ga-xsmall) var(--ga-small);
+        display: flex;
+        justify-content: center;
+
+        .toujours {
+            display: flex;
+            flex-direction: column;
+            height: auto;
+            margin-bottom: var(--ga-large);
+            max-width: 500px;
+            padding: 0 var(--ga-large);
+
+
+            .textbox {
+                order: 1;
+                align-items: center;
+                text-align: justify;
+
+            }
+            img {
+                order: 2;
+                border-radius: var(--ga-small);
+                aspect-ratio: 3 / 2;
+                object-fit: cover;
+                object-position: 30% 70%;
+            }
+            #nah_links {
+                display: none;
+            }
+        }
+    }
+
+
+    .umbruch {
+        margin-bottom: var(--ga-large);
+    }
+
+    .concentration {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        margin-bottom: var(--ga-large);
+
+        
+
+        .textbox {
+            order: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: justify;
+            /* damit de text i de mobile version sich ned über de gaaanz bildschrim zieht */
+            padding: 0 var(--ga-xlarge);
+            text-align-last: left;
+            
+            h2 {
+                text-align: center;
+            }
+        }
+
+        .textbox br {
+            /* zum kein umbruch ha i de mobil version */
+            display: none;
+        }
+
+        img {
+            /* damits bild nachem text chunnt */
+            order: 2;
+            aspect-ratio: auto;
+            height: auto;
+        }
+    }
+
+    
+}
+
+/* ID */
+
+#nah_links {
+    border-top-right-radius: var(--ga-small);
+    border-bottom-right-radius: var(--ga-small);
+}
+
+#nah_rechts {
+    border-top-left-radius: var(--ga-small);
+    border-bottom-left-radius: var(--ga-small);
+}
+
