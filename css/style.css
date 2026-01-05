@@ -2,16 +2,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
 
 :root {
-    /* farben */
+    /* FARBEN LIGHT MODE */
     --wzub: #F9F6F3;
     --wzuw: #F9F6F3;
-    --rzuhb: #F5C3CA;
+    --rzub: #F5C3CA;
     --rzur: #F5C3CA;
-    --bzuw: #F5C3CA;
+    --bzuw: #071636;
     --bzur: #071636;
     --bzub: #071636;
     
-    /* abstände */
+    /* ABSTÄNDE */
     --ga-xxlarge: 8rem;
     --ga-xlarge: 4rem;
     --ga-large: 3rem;
@@ -19,21 +19,44 @@
     --ga-small: 1.5rem;
     --ga-xsmall: 0.5rem;
 
-    /* schriften */
+    /* SCHRIFTEN */
     --f-title: "Playfair Display";
     --f-text: "Inter" 
 }
 
-/* bruchts das??? */
+
+/* DARK-MODE */
+
+/* BUTTON */
+    body.darkmode .mode-button {
+        background-image: url(../img/grafiken/lightmode_button.png);
+    }
+
+
+/* FARBEN DARK MODE */
+body.darkmode {
+    --wzub: #071636;
+    --wzuw: #F9F6F3;
+    --rzub: #071636;
+    --rzur: #F5C3CA;
+    --bzuw: #F9F6F3;
+    --bzur: #F5C3CA;
+    --bzub: #071636;
+}
+
+
+
+/* xxx bruchts das??? */
 html {
     scroll-behavior: smooth;
 }
 
+/* xxx bruchts das??? */
 html * {
     box-sizing: border-box;
 }
 
-/* body */
+/* LE BABY-FOOT STARTSEITE */
 
 body {
     display: flex;
@@ -48,7 +71,9 @@ body {
     margin: 0;
 }
 
-/* schriften */
+
+
+/* SCHRIFTEN */
 
 h1 {
     font-family: "Playfair Display";
@@ -70,7 +95,7 @@ p {
 }
 
 
-/* classes */
+/* CLASSES */
 
 .layout {
     max-width: 1000px;
@@ -125,7 +150,7 @@ p {
                 color: var(--rzur);
             }
 
-            /* bruchi das??? */
+            /* xxx bruchi das??? */
             &.active {
                 font-weight: bold;
             }
@@ -150,6 +175,8 @@ p {
         /* "klickbar" machen (bzw sieht so aus) */
         cursor: pointer;
     }
+
+
 }
 
 
@@ -231,7 +258,7 @@ p {
         white-space: normal;
 
 
-        color: var(--bzub);
+        color: var(--bzuw);
         p {
             font-family: var(--f-text);
             line-height: 1.4;
@@ -559,3 +586,10 @@ p {
     border-bottom-left-radius: var(--ga-small);
 }
 
+
+
+/* ÜBER MICH */
+
+#kuh {
+
+}
